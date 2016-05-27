@@ -2,7 +2,7 @@
 Recoverable Virtual Memory (group assignment)
 
 ## Overview
-In this project, the recoverable virtual memory (RVM) is implemtented based on the paper [Lightweight Recoverable Virtual Memory](http://dl.acm.org/citation.cfm?id=168631&dl=ACM&coll=DL&CFID=621058791&CFTOKEN=91409860). The LRVM mechanism is to maintain data persistency and improve the efficiency by updating only part of the file (logs).
+In this project, the recoverable virtual memory (RVM) is implemented based on the paper [Lightweight Recoverable Virtual Memory](http://dl.acm.org/citation.cfm?id=168631&dl=ACM&coll=DL&CFID=621058791&CFTOKEN=91409860). The LRVM mechanism is to maintain data persistency and improve the efficiency by updating only part of the file (logs).
 
 ## Background
 - The procedure to perform a file access (read or write) is called **transaction**. When the transaction starts, the LRVM system will generate a *undo record* which is a memory copy to save the origin copy of the file section. During the transaction, the data to be updated is write to the *redo log* which is a log file that contains all the updated data for the file segments. When the transaction is finished (committed), the redo log will be updated to the disk. 
